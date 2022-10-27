@@ -1,0 +1,22 @@
+# Backend
+backend/target
+
+# Frontend
+frontend/target
+frontend/node
+frontend/node_modules
+frontend/.vscode
+frontend/.angular
+
+# Git
+.git
+.gitmodules
+
+# Other stuff
+.manual
+keycloak
+.data
+.idea
+.mvn
+mvnw
+mvnw.cmd
