@@ -6,4 +6,4 @@
 	url = git@github.com:Coduction/Famulex_Backend.git
 [submodule "keycloak"]
 	path = keycloak
-	url = git@github.com:Coduction/Famulex_Keycloak_SPI.git
+	url = git@github.com:Coduction/Famulex_Keycloak.git

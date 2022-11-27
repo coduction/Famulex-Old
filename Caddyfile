@@ -1,0 +1,89 @@
+famulex.local {
+
+  # TODO Redir based on Accept-Language-Header
+  redir / /en
+
+  rewrite /en /en/
+  rewrite /de /de/
+  rewrite /fr /fr/
+  rewrite /es /es/
+  rewrite /sr /sr/
+  rewrite /sr-cyr /sr/cyr/
+
+  rewrite /api /api/
+  redir /auth /auth/
+
+  handle_path /en/* {
+      encode gzip zstd
+      root frontend/target/frontend/en-US
+      try_files {path} {path}/ /index.html
+      file_server
+  }
+
+  handle_path /de/* {
+    encode gzip zstd
+    root frontend/target/frontend/de-DE
+    try_files {path} {path}/ /index.html
+    file_server
+  }
+
+  handle_path /fr/* {
+    encode gzip zstd
+    root frontend/target/frontend/fr-FR
+    try_files {path} {path}/ /index.html
+    file_server
+  }
+
+  handle_path /es/* {
+    encode gzip zstd
+    root frontend/target/frontend/es-ES
+    try_files {path} {path}/ /index.html
+    file_server
+  }
+
+  handle_path /sr/* {
+    encode gzip zstd
+    root frontend/target/frontend/sr-RS
+    try_files {path} {path}/ /index.html
+    file_server
+  }
+
+  handle_path /sr/* {
+    encode gzip zstd
+    root frontend/target/frontend/sr-Cyr-RS
+    try_files {path} {path}/ /index.html
+    file_server
+  }
+
+  handle /api/* {
+    reverse_proxy localhost:8080
+  }
+
+  handle_path /auth/* {
+    reverse_proxy localhost:8105
+  }
+
+  respond 404
+
+}
+
+famulex.localhost {
+
+  rewrite /api /api/
+  redir /auth /auth/
+
+  handle /api/* {
+    reverse_proxy localhost:8080
+  }
+
+  handle_path /auth/* {
+    reverse_proxy localhost:8100
+  }
+
+  handle * {
+    reverse_proxy localhost:4200
+  }
+
+  respond 404
+
+}
