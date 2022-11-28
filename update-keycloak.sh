@@ -3,7 +3,7 @@
 git pull --ff-only
 git submodule update --recursive
 
-cd keycloak
+cd /home/zeus/coduction/famulex-dev/keycloak
 
 mvn clean package
 

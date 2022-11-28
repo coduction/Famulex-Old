@@ -3,7 +3,7 @@
 git pull --ff-only
 git submodule update --recursive
 
-cd backend
+cd /home/zeus/coduction/famulex-dev/backend
 
 mvn clean package
 
