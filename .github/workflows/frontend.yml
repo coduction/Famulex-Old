@@ -1,0 +1,23 @@
+name: Deploy Frontend
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+    paths:
+      - frontend/**
+
+jobs:
+  deploy:
+    name: Deploy Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test SSH connection
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_KEY_PASS }}
+          script: |
+            sh /home/zeus/coduction/famulex-dev/update-frontend.sh
