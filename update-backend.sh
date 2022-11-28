@@ -7,6 +7,6 @@ git submodule update --recursive
 
 cd backend
 
-mvn clean package
+mvn -B clean package
 
 docker compose up --detach --build
