@@ -1,15 +1,15 @@
-name: Deploy Frontend
+name: Deploy Keycloak
 on:
   workflow_dispatch:
   push:
     branches:
       - dev
     paths:
-      - frontend
+      - keycloak
 
 jobs:
   deploy:
-    name: Deploy Frontend
+    name: Deploy Keycloak
     runs-on: ubuntu-latest
     steps:
       - name: Execute Update Script
@@ -20,4 +20,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASS }}
           script: |
-            sh /home/zeus/coduction/famulex-dev/update-frontend.sh
+            sh /home/zeus/coduction/famulex-dev/update-keycloak.sh
