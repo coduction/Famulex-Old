@@ -8,7 +8,7 @@ famulex.local {
   rewrite /fr /fr/
   rewrite /es /es/
   rewrite /sr /sr/
-  rewrite /sr-cyr /sr/cyr/
+  rewrite /sr-cyr /sr-cyr/
 
   rewrite /api /api/
   redir /auth /auth/
@@ -48,7 +48,7 @@ famulex.local {
     file_server
   }
 
-  handle_path /sr/* {
+  handle_path /sr-cyr/* {
     encode gzip zstd
     root frontend/target/frontend/sr-Cyr-RS
     try_files {path} {path}/ /index.html
@@ -62,9 +62,6 @@ famulex.local {
   handle_path /auth/* {
     reverse_proxy localhost:8105
   }
-
-  respond 404
-
 }
 
 famulex.localhost {
@@ -83,7 +80,4 @@ famulex.localhost {
   handle * {
     reverse_proxy localhost:4200
   }
-
-  respond 404
-
 }

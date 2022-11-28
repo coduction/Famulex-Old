@@ -20,10 +20,7 @@
     <modules>
         <module>frontend</module>
         <module>backend</module>
+        <module>keycloak</module>
     </modules>
-
-    <properties>
-        <java.version>17</java.version>
-    </properties>
 
 </project>
