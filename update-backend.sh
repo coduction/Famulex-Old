@@ -1,9 +1,11 @@
 #!/bin/bash
 
+cd /home/zeus/coduction/famulex-dev
+
 git pull --ff-only
 git submodule update --recursive
 
-cd /home/zeus/coduction/famulex-dev/backend
+cd backend
 
 mvn clean package
 
