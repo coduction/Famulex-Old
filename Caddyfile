@@ -13,6 +13,14 @@ famulex.local {
   rewrite /api /api/
   redir /auth /auth/
 
+  handle /api/* {
+      reverse_proxy localhost:8080
+  }
+
+  handle /auth/* {
+    reverse_proxy localhost:8105
+  }
+
   handle_path /en/* {
       encode gzip zstd
       root frontend/target/frontend/en-US
@@ -54,14 +62,6 @@ famulex.local {
     try_files {path} {path}/ /index.html
     file_server
   }
-
-  handle /api/* {
-    reverse_proxy localhost:8080
-  }
-
-  handle_path /auth/* {
-    reverse_proxy localhost:8105
-  }
 }
 
 famulex.localhost {
@@ -73,7 +73,7 @@ famulex.localhost {
     reverse_proxy localhost:8080
   }
 
-  handle_path /auth/* {
+  handle /auth/* {
     reverse_proxy localhost:8100
   }
 
