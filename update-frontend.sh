@@ -1,5 +1,7 @@
 #!/bin/bash
 eval $(keychain --eval zeus)
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
 
 cd /home/zeus/coduction/famulex-dev
 
@@ -13,4 +15,4 @@ npm run build
 
 docker compose down
 docker compose build
-docker compose up --detach
+docker compose up -d
