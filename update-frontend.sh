@@ -11,4 +11,6 @@ cd frontend
 npm install -f
 npm run build
 
-docker compose up --detach --build
+docker compose down
+docker compose build
+docker compose up --detach
