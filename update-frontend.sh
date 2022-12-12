@@ -1,7 +1,7 @@
 #!/bin/bash
-eval $(keychain --eval zeus)
-export NVM_DIR=~/.nvm
-source ~/.nvm/nvm.sh
+#eval $(keychain --eval zeus)
+#export NVM_DIR=~/.nvm
+#source ~/.nvm/nvm.sh
 
 cd /home/zeus/coduction/famulex-dev
 
