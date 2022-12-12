@@ -10,4 +10,6 @@ cd backend
 
 mvn -B clean package
 
-docker compose up --detach --build
+docker compose down
+docker compose build
+docker compose up -d
