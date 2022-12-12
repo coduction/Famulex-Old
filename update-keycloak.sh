@@ -1,5 +1,6 @@
 #!/bin/bash
 eval $(keychain --eval zeus)
+
 cd /home/zeus/coduction/famulex-dev
 
 git pull --ff-only

@@ -20,4 +20,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASS }}
           script: |
-            sh /home/zeus/coduction/famulex-dev/update-backend.sh
+            bash /home/zeus/coduction/famulex-dev/update-backend.sh
