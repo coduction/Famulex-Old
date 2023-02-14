@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="dev" />
+    <module name="backend" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.coduction.famulex.backend.FamulexBackend" />
+    <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndTriggerFile" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.coduction.famulex.backend.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
