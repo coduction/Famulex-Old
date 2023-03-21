@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Keycloak Debug" type="ShConfigurationType">
+        <option name="SCRIPT_TEXT" value=""/>
+        <option name="INDEPENDENT_SCRIPT_PATH" value="true"/>
+        <option name="SCRIPT_PATH" value="$PROJECT_DIR$/../../Tools/keycloak/bin/kc.sh"/>
+        <option name="SCRIPT_OPTIONS"
+                value="start-dev --debug --http-port=8100 --http-host=localhost --http-relative-path=/auth --hostname-strict=false --hostname-strict-backchannel=true --proxy=edge --spi-events-listener-famulex-sync-users-url https://famulex.localhost/api/users/sync --spi-events-listener-famulex-sync-security-url https://famulex.localhost/api/security/sync --spi-events-listener-famulex-sync-api-key 8QAbZhrHfQPAUxxKkUw3PlJEbaZhZuJk7rHBeNDA0kao5t6grx --spi-events-listener-famulex-sync-api-key-header X-Api-Key"/>
+        <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true"/>
+        <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Tools/keycloak"/>
+        <option name="INDEPENDENT_INTERPRETER_PATH" value="true"/>
+        <option name="INTERPRETER_PATH" value="/bin/zsh"/>
+        <option name="INTERPRETER_OPTIONS" value=""/>
+        <option name="EXECUTE_IN_TERMINAL" value="false"/>
+        <option name="EXECUTE_SCRIPT_FILE" value="true"/>
+        <envs/>
+        <method v="2"/>
+    </configuration>
+</component>
